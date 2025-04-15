@@ -1,6 +1,7 @@
 .container {
     align-items: center;
     text-align: center;
+    gap: 35px;
 }
 
 .name {
@@ -17,6 +18,7 @@
     margin: 0 auto; /* Centraliza horizontalmente */
     justify-content: center;
     align-items: center;
+    gap: 35px;
 }
 
 .armorCard {
@@ -32,7 +34,7 @@
     transition: transform 0.3s ease; /* Adiciona uma transição suave */
     width: 800px; /* Define um tamanho máximo para a div pai */
     margin: auto; /* Centraliza a div pai */
-
+    gap: 35px;
 }
 
 .armorCard:hover {

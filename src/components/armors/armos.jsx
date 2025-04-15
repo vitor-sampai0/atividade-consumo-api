@@ -16,12 +16,11 @@ const ArmorList = () => {
             try {
                 setLoading(true);
                 const response = await axios.get(url);
-                // Acesse a propriedade correta da resposta
-                setArmors(response.data.data); // Supondo que o array está em response.data.data
+                setArmors(response.data.data); // Acesse a propriedade correta
                 setLoading(false);
             } catch (error) {
-                console.log("Erro ao buscar armors na API");
-                setError("Erro ao buscar armors na API. Tente novamente mais tarde.");
+                console.error("Erro ao buscar armaduras na API", error);
+                setError("Erro ao buscar armaduras na API. Tente novamente mais tarde.");
                 setLoading(false);
             }
         };
@@ -29,37 +28,29 @@ const ArmorList = () => {
     }, []);
 
     if (loading) {
-        return (
-            <div className={styles.loading}>
-                Carregando armors
-            </div>
-        );
+        return <div className={styles.loading}>Carregando armaduras...</div>;
     }
 
     if (error) {
-        return (
-            <div className={styles.error}>
-                {error}
-            </div>
-        );
+        return <div className={styles.error}>{error}</div>;
     }
 
     return (
         <div className={styles.container}>
-            <h1 className={styles.name}>Armarduras de Elden Ring</h1>
-            <div className={styles.armorsGrid}>
+            <h1 className={styles.title}>Armaduras de Elden Ring</h1>
+            <div className={styles.armorGrid}>
                 {Array.isArray(armors) && armors.map((armor) => (
                     <div key={armor.id} className={styles.armorCard}>
                         <div className={styles.imageContainer}>
-                            <img src={armor.image} alt={armor.name} className={styles.image} />
+                            {armor.image ? (
+                                <img src={armor.image} alt={armor.name} className={styles.image} />
+                            ) : (
+                                <div className={styles.noImage}>Sem imagem</div>
+                            )}
                         </div>
                         <div className={styles.content}>
-                            <h2 className={styles.armorname}>{armor.name}</h2>
-                            <p className={styles.description}>Description: {armor.description}</p>
-                            <div className={styles.attributes}>
-                            <p className={styles.category}><p className={styles.type}>👇 Type 👇</p> {armor.category}</p>
-                            </div>
-                            
+                            <h2 className={styles.armorName}>{armor.name}</h2>
+                            <p className={styles.description}>{armor.description}</p>
                         </div>
                     </div>
                 ))}
