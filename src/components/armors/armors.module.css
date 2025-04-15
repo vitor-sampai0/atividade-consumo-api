@@ -1,0 +1,80 @@
+.container {
+    align-items: center;
+    text-align: center;
+}
+
+.name {
+    color: black;
+}
+
+.armorsGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Corrige a unidade de medida */
+    padding-top: 100px;
+    background-color: #342f5ca0;
+    width: 900px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+.armorCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra para mais destaque */
+    overflow: hidden;
+    padding: 25px; /* Aumenta o espaçamento interno */
+    background-color: #f3f3f3; /* Cor de fundo mais clara */
+    color: #444; /* Cor do texto mais suave */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+    width: 800px; /* Define um tamanho máximo para a div pai */
+    margin: auto; /* Centraliza a div pai */
+
+}
+
+.armorCard:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+.imageContainer {
+    flex: 0 0 150px;
+    height: 150px;
+    margin-right: 20px; /* Aumenta o gap entre a imagem e o texto */
+    border-radius: 8px; /* Adiciona bordas arredondadas à imagem */
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
+}
+
+.content {
+    flex: 1;
+    padding: 20px; /* Aumenta o espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Arial', sans-serif; /* Define uma fonte padrão */
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+.title {
+    text-align: center; /* Centraliza o título */
+    font-size: 24px; /* Define o tamanho da fonte */
+    font-weight: bold; /* Deixa o título em negrito */
+    color: #6a5acd; /* Cor bonita (roxo suave) */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do título */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra ao texto */
+}
+
+.category {
+    font-size: 18px; /* Define o tamanho da fonte */
+    font-weight: 500; /* Define um peso intermediário para o texto */
+    color: #f4000098; /* Cor do texto */
+    margin-top: 10px; /* Adiciona espaçamento acima */
+    margin-bottom: 10px; /* Adiciona espaçamento abaixo */
+    text-transform: uppercase; /* Transforma o texto em letras maiúsculas */
+    letter-spacing: 1px; /* Adiciona espaçamento entre as letras */
+}
+
+.type {
+    color: #1d02e8a0;
+}
